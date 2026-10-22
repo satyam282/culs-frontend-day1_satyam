@@ -117,6 +117,27 @@ section {
   border-radius: 0.5rem;
 }
 
+/*random button */
+
+.btn-random {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--leaf);
+  background: var(--leaf-light);
+  border: 1px solid var(--leaf);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn-random:hover {
+  background: var(--leaf);
+  color: white;
+}
+
 /* Search and filter */
 
 .filters {

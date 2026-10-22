@@ -21,6 +21,7 @@ const homeMessage = document.querySelector("#home-message")
 const search = document.querySelector("#search")
 const lifeFilter = document.querySelector("#life")
 const skipLink = document.querySelector(".skip-link")
+const randomBtn = document.querySelector("#random-herb")
 
 // ---------------------------------------------------------------- state
 
@@ -326,6 +327,21 @@ document.querySelector(".filters").addEventListener("submit", event => event.pre
 skipLink.addEventListener("click", event => {
   event.preventDefault()
   main.focus()
+})
+
+// Pick and navigate to a random herb
+randomBtn.addEventListener("click", async () => {
+  if (!state.loaded) {
+    await ensureList()
+  }
+  if (state.herbs.length > 0) {
+    // Filter out the currently viewed herb if the user is already on one
+    const current = currentRoute()
+    const candidates = state.herbs.filter(h => h.id !== current)
+    const pool = candidates.length > 0 ? candidates : state.herbs
+    const pick = pool[Math.floor(Math.random() * pool.length)]
+    location.hash = `#${pick.id}`
+  }
 })
 
 route()
