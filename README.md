@@ -20,6 +20,7 @@ Made for the Frontend Development course (CULS, 2026). It started as the repaire
 - `index.html#basil` shows a single herb: its name, Latin name, use and life cycle.
 - Each herb is loaded with `fetch()` from `data/<herb>.json`. The page is built by JavaScript, not written by hand.
 - **Extra feature: search and filter.** Type in the search box (matches name, Latin name and use) and/or pick annual or perennial. The list updates as you type.
+- **Extra feature: "Surprise me 🌿" random herb.** A button in the intro that picks a random herb from the catalog and routes directly to its detail page, skipping the current herb if one is already open.
 - If something goes wrong, the page says what happened instead of staying blank (see [When things go wrong](#when-things-go-wrong)).
 - The whole site works with the keyboard alone.
 
@@ -128,6 +129,7 @@ Work was done in small commits, one change each. See the [commit history](https:
 - **One broken file must not break the list:** the home view uses `Promise.allSettled`.
 - <What went wrong during the project and how you found it, in your own words.>
 - <What you would do next.>
+- The header logo returned a 404 on deployment due to file system case-sensitivity differences (`Logo.svg` vs `logo.svg`). We standardized all asset filenames and paths to lowercase.
 
 ## Credits
 
