@@ -3,7 +3,7 @@
 - Anchal
 - Akhin
 - Abhinav
-- Satyam
+
 
 # The Little Herb Garden
 
